@@ -4,6 +4,7 @@ import threading
 import keyboard
 import datetime
 import webbrowser
+import requests
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
@@ -11,7 +12,7 @@ import traceback
 import tkinter as tk
 from tkinter import filedialog
 
-def choose_file():
+def choose_file():#handles the file dialog
     root = tk.Tk()
     root.withdraw()  # Hide the main window
     initial_dir = os.path.expanduser("~")  # Get user's home directory
@@ -19,24 +20,24 @@ def choose_file():
     return file_path
 
 # Configuration Variables
-PORT = 8000
-IPV4 = '0.0.0.0'
-FILE_PATH_SERVED = choose_file()
-WATCH_PATH = os.path.dirname(FILE_PATH_SERVED)
-print(WATCH_PATH) 
-FILE_EXTENSIONS = ('.html', '.css', '.js', '.json')
+PORT = 8000 #
+IPV4 = '0.0.0.0' #
+FILE_PATH_SERVED = choose_file() #set using a while dialog when the script is first run
+FILE_EXTENSIONS = ('.html', '.css', '.js', '.json') #ad any additional languages here thay may change your project's content when altered
 
 # Global Variables
-NETWORK_ADDRESS = f"{IPV4}:{PORT}"
-SERVER_LOG_PATH = os.path.join(os.getcwd(), 'logs', 'serverLog.txt')
+NETWORK_ADDRESS = f"{IPV4}:{PORT}" #used for automatically loading your project into the browser
+PARENT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))#parent dir of the main script's src dir
+SERVER_LOG_PATH = os.path.join(PARENT_DIR, "logs", "serverLog.txt") #where the custom logging fucntion can fins the log file
+WATCH_PATH = os.path.dirname(FILE_PATH_SERVED) #The folder that your entrry file is contained in. Child directories are also watched by default
 
 # MIME type mapping (expand as needed)
-MIME_TYPES = {
+MIME_TYPES = { #used to ensure proper MIME type is sent to the roiwer in the response header. Scrucial when using ESM modules, etc. 
     '.html': 'text/html',
     '.css': 'text/css',
     '.js': 'application/javascript',
     '.json': 'application/json'
-    # ... add more types as needed
+    # ... will be expanded
 }
 
 # Logging function
@@ -55,7 +56,7 @@ def stop_server():
     except Exception as e:
         custom_log_message("error", f"An error occurred while stopping the server: {e}\n{traceback.format_exc()}")
 
-# Function to open URL
+# Function to open URL in the browser automatically
 def open_url():
     try:
         url = f'http://{NETWORK_ADDRESS}'
@@ -110,6 +111,13 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
                 content_type = self.headers.get('Content-Type')
                 # Validate and sanitize content type if necessary
 
+            # Check for the "Trigger-Refresh" header (optional)
+            if self.headers.get('Trigger-Refresh') == 'True':
+                self.send_response(302)  # Send a redirect response
+                self.send_header('Location', '/')  # Redirect to the same URL
+                self.end_headers()
+                return
+
             # Open the file and send its contents
             with open(file_to_serve, 'rb') as file:
                 self.send_response(200)
@@ -120,8 +128,6 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         except Exception as e:
             self.send_error(500, 'Internal Server Error')
             custom_log_message("error", f"Error serving file: {e}")
-
-
 
 # Function to run the HTTP server
 def run(server_class=HTTPServer, handler_class=NoCacheHandler, port=PORT, file_to_serve=FILE_PATH_SERVED):
@@ -138,28 +144,44 @@ def run(server_class=HTTPServer, handler_class=NoCacheHandler, port=PORT, file_t
     except Exception as e:
         custom_log_message("error", f"An unexpected error occurred while starting the server: {e}\n{traceback.format_exc()}")
 
-# File modification handler
-class MyHandler(FileSystemEventHandler):
-    def on_modified(self, event):
+# File modification/ hot reloading handler
+class RefreshHandler(FileSystemEventHandler):
+    def trigger_refresh():
         try:
-            if event.src_path.endswith(FILE_EXTENSIONS):
-                custom_log_message("info", f"File {event.src_path} has been modified. Reloading...")
-                os.system("pkill -f 'python3 localServer.py'")
-                os.system("python web-server.py")## this isnt right, fuck
+            # Use the NETWORK_ADDRESS variable for the server URL
+            url = f"http://{NETWORK_ADDRESS}/trigger-refresh"  # Example endpoint
+            headers = {"Trigger-Refresh": "True"}
+            # Add data to request body if needed (e.g., file info)
+            # data = {"changed_file": "path/to/file"}
+            response = requests.post(url, headers=headers, data=data)  # Optional data
+            if response.status_code != 200:
+                custom_log_message("error", f"Failed to trigger refresh: {response.status_code}")
+            else:
+                # Optionally log or process the server's response
+                custom_log_message("info", f"Server response: {response.text}")
         except Exception as e:
-            custom_log_message("error", f"An error occurred while handling file modification: {e}\n{traceback.format_exc()}")
+            custom_log_message("error", f"Failed to trigger refresh: {e}")
 
+    def on_modified(self, event):
+        if event.src_path.endswith(FILE_EXTENSIONS):
+            custom_log_message("info", f"File {event.src_path} has been modified. Triggering refresh...")
+            try:
+                self.trigger_refresh()
+            except Exception as e:
+                custom_log_message("error", f"Failed to trigger refresh: {e}")
+
+#where evrthing gets set in motion
 if __name__ == '__main__':
     observer = Observer()
     observer_started = False
     try:
         # Observer to watch for file modifications
         custom_log_message("info",WATCH_PATH)
-        observer.schedule(MyHandler(), path=WATCH_PATH, recursive=True)
+        observer.schedule(RefreshHandler(), path=WATCH_PATH, recursive=True)
         observer.start()
         observer_started = True
 
-        # Start the HTTP server in a separate thread
+        # Start the HTTP server in a separate thread. Calls the run function
         run_thread = threading.Thread(target=run)
         run_thread.start()
 

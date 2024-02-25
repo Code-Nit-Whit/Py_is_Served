@@ -540,3 +540,44 @@ TypeError: expected str, bytes or os.PathLike object, not NoneType
 [2024-02-24 14:25:03] [INFO] application/javascript
 [2024-02-24 14:25:03] [INFO] application/javascript
 [2024-02-24 15:01:12] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 19:17:56] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 19:17:56] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 19:17:57] [INFO] text/html
+[2024-02-24 19:17:57] [INFO] application/javascript
+[2024-02-24 19:17:57] [INFO] application/javascript
+[2024-02-24 19:35:26] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/index.html has been modified. Reloading...
+[2024-02-24 19:35:26] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/index.html has been modified. Reloading...
+[2024-02-24 19:42:07] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/index.html has been modified. Reloading...
+[2024-02-24 19:42:07] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/index.html has been modified. Reloading...
+[2024-02-24 22:02:29] [INFO] text/html
+[2024-02-24 22:02:29] [INFO] application/javascript
+[2024-02-24 22:02:29] [INFO] application/javascript
+[2024-02-24 22:46:29] [INFO] text/html
+[2024-02-24 22:46:29] [INFO] application/javascript
+[2024-02-24 22:46:29] [INFO] application/javascript
+[2024-02-24 22:46:40] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 22:48:44] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 22:48:44] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 22:48:45] [INFO] text/html
+[2024-02-24 22:48:45] [INFO] application/javascript
+[2024-02-24 22:48:45] [INFO] application/javascript
+[2024-02-24 22:51:59] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/index.html has been modified. Triggering refresh...
+[2024-02-24 22:51:59] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:53:11] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:53:11] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:53:11] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:53:11] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:54:45] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:54:45] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:54:45] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:54:45] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:55:07] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:55:07] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:55:07] [INFO] File /home/code-nit-whit/Documents/GitHub/test-editor/test.js has been modified. Triggering refresh...
+[2024-02-24 22:55:07] [ERROR] Failed to trigger refresh: RefreshHandler.trigger_refresh() takes 0 positional arguments but 1 was given
+[2024-02-24 22:58:22] [INFO] text/html
+[2024-02-24 22:58:22] [INFO] application/javascript
+[2024-02-24 22:58:22] [INFO] application/javascript
+[2024-02-25 07:49:41] [INFO] text/html
+[2024-02-25 07:49:41] [INFO] application/javascript
+[2024-02-25 07:49:41] [INFO] application/javascript
