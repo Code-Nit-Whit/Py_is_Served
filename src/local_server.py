@@ -1,6 +1,7 @@
 import os
 import re
 import threading
+import time
 import keyboard
 import datetime
 import webbrowser
@@ -128,6 +129,27 @@ class NoCacheHandler(SimpleHTTPRequestHandler):
         except Exception as e:
             self.send_error(500, 'Internal Server Error')
             custom_log_message("error", f"Error serving file: {e}")
+    
+    def trigger_refresh():
+        print("trigger refresh is accessed")
+        try:
+            # Use the NETWORK_ADDRESS variable for the server URL
+            url = f"http://{NETWORK_ADDRESS}/trigger-refresh"  # Example endpoint
+            headers = {"Trigger-Refresh": "True"}
+            # Add data to request body if needed (e.g., file info)
+            # data = {"changed_file": "path/to/file"}
+            response = requests.post(url, headers=headers)  # Optional data
+            if response.status_code != 200:
+                custom_log_message("error", f"Failed to trigger refresh: {response.status_code}")
+            else:
+                # Optionally log or process the server's response
+                custom_log_message("info", f"Server response: {response.text}")
+        except Exception as e:
+            custom_log_message("error", f"Failed to trigger refresh: {e}")
+
+    @staticmethod
+    def invoke_trigger():
+        NoCacheHandler.trigger_refresh()
 
 # Function to run the HTTP server
 def run(server_class=HTTPServer, handler_class=NoCacheHandler, port=PORT, file_to_serve=FILE_PATH_SERVED):
@@ -146,27 +168,20 @@ def run(server_class=HTTPServer, handler_class=NoCacheHandler, port=PORT, file_t
 
 # File modification/ hot reloading handler
 class RefreshHandler(FileSystemEventHandler):
-    def trigger_refresh():
-        try:
-            # Use the NETWORK_ADDRESS variable for the server URL
-            url = f"http://{NETWORK_ADDRESS}/trigger-refresh"  # Example endpoint
-            headers = {"Trigger-Refresh": "True"}
-            # Add data to request body if needed (e.g., file info)
-            # data = {"changed_file": "path/to/file"}
-            response = requests.post(url, headers=headers, data=data)  # Optional data
-            if response.status_code != 200:
-                custom_log_message("error", f"Failed to trigger refresh: {response.status_code}")
-            else:
-                # Optionally log or process the server's response
-                custom_log_message("info", f"Server response: {response.text}")
-        except Exception as e:
-            custom_log_message("error", f"Failed to trigger refresh: {e}")
+    def __init__(self):
+        self.refresh_timer = None
 
-    def on_modified(self, event):
+    def on_any_event(self, event):
+        print("on any event is accessed")
         if event.src_path.endswith(FILE_EXTENSIONS):
-            custom_log_message("info", f"File {event.src_path} has been modified. Triggering refresh...")
             try:
-                self.trigger_refresh()
+                if self.refresh_timer is not None:
+                    # If a timer is already running, reset it
+                    self.refresh_timer.cancel()
+                    # Start a new timer for 1 second (you can adjust the delay as needed)
+                self.refresh_timer = threading.Timer(1, NoCacheHandler.invoke_trigger)
+                self.refresh_timer.start()
+                    
             except Exception as e:
                 custom_log_message("error", f"Failed to trigger refresh: {e}")
 
