@@ -1,0 +1,542 @@
+[2024-02-24 11:04:04] [ERROR] An unexpected error occurred: [Errno 2] No such file or directory
+[2024-02-24 11:07:59] [ERROR] An unexpected error occurred: [Errno 2] No such file or directory
+[2024-02-24 11:11:41] [ERROR] An unexpected error occurred: [Errno 2] No such file or directory
+[2024-02-24 11:14:41] [ERROR] An unexpected error occurred: [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 112, in <module>
+    observer.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/api.py", line 280, in start
+    emitter.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/utils/__init__.py", line 92, in start
+    self.on_thread_start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify.py", line 125, in on_thread_start
+    self._inotify = InotifyBuffer(path, self.watch.is_recursive, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_buffer.py", line 37, in __init__
+    self._inotify = Inotify(path, recursive, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 176, in __init__
+    self._add_watch(path, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 401, in _add_watch
+    Inotify._raise_error()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 417, in _raise_error
+    raise OSError(err, os.strerror(err))
+FileNotFoundError: [Errno 2] No such file or directory
+
+[2024-02-24 11:18:28] [INFO] Home/Documents/GitHub/test-editor
+[2024-02-24 11:18:28] [ERROR] An unexpected error occurred: [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 113, in <module>
+    observer.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/api.py", line 280, in start
+    emitter.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/utils/__init__.py", line 92, in start
+    self.on_thread_start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify.py", line 125, in on_thread_start
+    self._inotify = InotifyBuffer(path, self.watch.is_recursive, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_buffer.py", line 37, in __init__
+    self._inotify = Inotify(path, recursive, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 176, in __init__
+    self._add_watch(path, event_mask)
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 401, in _add_watch
+    Inotify._raise_error()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify_c.py", line 417, in _raise_error
+    raise OSError(err, os.strerror(err))
+FileNotFoundError: [Errno 2] No such file or directory
+
+[2024-02-24 11:25:40] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:25:40] [ERROR] An unexpected error occurred while starting the server: bind(): AF_INET address must be tuple, not str
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 94, in run
+    httpd = server_class(server_address, handler_class)
+  File "/usr/lib/python3.10/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.10/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.10/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: bind(): AF_INET address must be tuple, not str
+
+[2024-02-24 11:25:40] [ERROR] An unexpected error occurred: You must be root to use this library on linux.
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 128, in <module>
+    keyboard.add_hotkey('super+k+s', stop_server)
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/__init__.py", line 639, in add_hotkey
+    _listener.start_if_necessary()
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/_generic.py", line 35, in start_if_necessary
+    self.init()
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/__init__.py", line 196, in init
+    _os_keyboard.init()
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/_nixkeyboard.py", line 113, in init
+    build_device()
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/_nixkeyboard.py", line 109, in build_device
+    ensure_root()
+  File "/home/code-nit-whit/.local/lib/python3.10/site-packages/keyboard/_nixcommon.py", line 174, in ensure_root
+    raise ImportError('You must be root to use this library on linux.')
+ImportError: You must be root to use this library on linux.
+
+[2024-02-24 11:27:27] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:27:27] [ERROR] An unexpected error occurred while starting the server: bind(): AF_INET address must be tuple, not str
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 94, in run
+    httpd = server_class(server_address, handler_class)
+  File "/usr/lib/python3.10/socketserver.py", line 452, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.10/http/server.py", line 137, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.10/socketserver.py", line 466, in server_bind
+    self.socket.bind(self.server_address)
+TypeError: bind(): AF_INET address must be tuple, not str
+
+[2024-02-24 11:29:14] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:29:14] [INFO] Server started on port 8000
+[2024-02-24 11:29:21] [INFO] GET request received: /
+[2024-02-24 11:29:21] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:29:22] [INFO] GET request received: /
+[2024-02-24 11:29:22] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:29:26] [INFO] GET request received: /
+[2024-02-24 11:29:26] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:29:31] [INFO] GET request received: /
+[2024-02-24 11:29:31] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:30:01] [INFO] GET request received: /
+[2024-02-24 11:30:01] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:31:01] [INFO] GET request received: /
+[2024-02-24 11:31:01] [ERROR] An error occurred while handling GET request: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    super().do_GET()
+  File "/usr/lib/python3.10/http/server.py", line 672, in do_GET
+    f = self.send_head()
+  File "/usr/lib/python3.10/http/server.py", line 716, in send_head
+    return self.list_directory(path)
+  File "/usr/lib/python3.10/http/server.py", line 825, in list_directory
+    self.send_response(HTTPStatus.OK)
+  File "/usr/lib/python3.10/http/server.py", line 498, in send_response
+    self.log_request(code)
+  File "/usr/lib/python3.10/http/server.py", line 550, in log_request
+    self.log_message('"%s" %s %s',
+TypeError: NoCacheHandler.log_message() takes 3 positional arguments but 5 were given
+
+[2024-02-24 11:38:58] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:39:23] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:39:23] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:39:30] [INFO] GET request received: /
+[2024-02-24 11:39:31] [INFO] GET request received: /favicon.ico
+[2024-02-24 11:45:51] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:46:25] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:46:25] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:48:30] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:48:58] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:48:58] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:49:01] [INFO] GET request received: /
+[2024-02-24 11:49:01] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/'
+[2024-02-24 11:50:51] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:51:27] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:51:27] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:51:38] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:52:51] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:52:51] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:54:37] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:55:03] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:55:03] [ERROR] An unexpected error occurred while starting the server: open_url() missing 1 required positional argument: 'item'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 108, in run
+    open_url()
+TypeError: open_url() missing 1 required positional argument: 'item'
+
+[2024-02-24 11:55:48] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:55:48] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:58:25] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:58:48] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:58:48] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:59:31] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 11:59:55] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:59:55] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 11:59:55] [INFO] GET request received: /
+[2024-02-24 11:59:55] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/'
+[2024-02-24 12:00:15] [INFO] GET request received: /
+[2024-02-24 12:00:15] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/'
+[2024-02-24 12:08:02] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 12:08:19] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:08:20] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:08:20] [INFO] GET request received: /
+[2024-02-24 12:08:20] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:20] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:21] [INFO] GET request received: /
+[2024-02-24 12:08:21] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:21] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:26] [INFO] GET request received: /
+[2024-02-24 12:08:26] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:26] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:29] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/http/server.py", line 293, in parse_request
+    raise ValueError
+ValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:29] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/http/server.py", line 293, in parse_request
+    raise ValueError
+ValueError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:36] [INFO] GET request received: /
+[2024-02-24 12:08:36] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:36] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:37] [INFO] GET request received: /
+[2024-02-24 12:08:37] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:37] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:44] [INFO] GET request received: /
+[2024-02-24 12:08:44] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:44] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:46] [INFO] GET request received: /
+[2024-02-24 12:08:46] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:46] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:46] [INFO] GET request received: /
+[2024-02-24 12:08:46] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:46] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:47] [INFO] GET request received: /
+[2024-02-24 12:08:47] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:47] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:47] [INFO] GET request received: /
+[2024-02-24 12:08:47] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:47] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:08:51] [INFO] GET request received: /
+[2024-02-24 12:08:51] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:08:51] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:09:21] [INFO] GET request received: /
+[2024-02-24 12:09:21] [ERROR] An error occurred while serving file: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+[2024-02-24 12:09:21] [ERROR] An error occurred while sending headers: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 86, in do_GET
+    with open(file_path, 'rb') as file:
+IsADirectoryError: [Errno 21] Is a directory: '/home/code-nit-whit/Documents/GitHub/test-editor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 59, in end_headers
+    self.send_no_cache_headers()
+AttributeError: 'NoCacheHandler' object has no attribute 'send_no_cache_headers'
+
+[2024-02-24 12:12:28] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 12:15:09] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:15:09] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:15:10] [INFO] GET request received: /
+[2024-02-24 12:15:10] [ERROR] An error occurred while serving file: [Errno 2] No such file or directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html'
+[2024-02-24 12:15:23] [INFO] GET request received: /
+[2024-02-24 12:15:23] [ERROR] An error occurred while serving file: [Errno 2] No such file or directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html'
+[2024-02-24 12:18:12] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 12:18:44] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:18:44] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 12:18:44] [INFO] GET request received: /
+[2024-02-24 12:18:44] [INFO] GET request received: /test.js
+[2024-02-24 12:18:44] [INFO] GET request received: /node_modules/monaco-editor/esm/metadata.js
+[2024-02-24 12:20:51] [INFO] GET request received: /
+[2024-02-24 12:20:51] [INFO] GET request received: /test.js
+[2024-02-24 12:20:51] [INFO] GET request received: /node_modules/monaco-editor/esm/metadata.js
+[2024-02-24 12:23:00] [INFO] GET request received: /
+[2024-02-24 12:23:00] [INFO] GET request received: /test.js
+[2024-02-24 12:23:00] [INFO] GET request received: /node_modules/monaco-editor/esm/metadata.js
+[2024-02-24 12:50:35] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 12:51:15] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 12:51:15] [INFO] Server started on port 8000 serving files from /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 12:51:16] [INFO] GET request received: /
+[2024-02-24 12:51:16] [ERROR] An error occurred while serving file: [Errno 20] Not a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html/index.html'
+[2024-02-24 12:57:28] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 12:57:36] [INFO] ()
+[2024-02-24 12:57:36] [ERROR] An unexpected error occurred: expected str, bytes or os.PathLike object, not tuple
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 138, in <module>
+    observer.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/api.py", line 280, in start
+    emitter.start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/utils/__init__.py", line 92, in start
+    self.on_thread_start()
+  File "/usr/local/lib/python3.10/dist-packages/watchdog/observers/inotify.py", line 123, in on_thread_start
+    path = os.fsencode(self.watch.path)
+  File "/usr/lib/python3.10/os.py", line 811, in fsencode
+    filename = fspath(filename)  # Does type-checking of `filename`.
+TypeError: expected str, bytes or os.PathLike object, not tuple
+
+[2024-02-24 13:02:04] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:02:04] [ERROR] An unexpected error occurred while starting the server: expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/home/code-nit-whit/create_server/localServer.py", line 111, in run
+    handler_class.directory = os.path.dirname(file_to_serve)  # Set the directory for file serving
+  File "/usr/lib/python3.10/posixpath.py", line 152, in dirname
+    p = os.fspath(p)
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+[2024-02-24 13:04:41] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:04:41] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:04:42] [INFO] GET request received: /
+[2024-02-24 13:04:42] [ERROR] An error occurred while serving file: [Errno 20] Not a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html/index.html'
+[2024-02-24 13:18:45] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:19:06] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:19:06] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:19:07] [INFO] GET request received: /
+[2024-02-24 13:19:07] [ERROR] An error occurred while serving file: [Errno 20] Not a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html/index.html'
+[2024-02-24 13:26:35] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:26:57] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:26:57] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:26:58] [INFO] GET request received: /
+[2024-02-24 13:26:58] [ERROR] An error occurred while serving file: [Errno 20] Not a directory: '/home/code-nit-whit/Documents/GitHub/test-editor/index.html/index.html'
+[2024-02-24 13:36:40] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:36:52] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/nls.metadata.json
+[2024-02-24 13:36:52] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/nls.metadata.json
+[2024-02-24 13:37:22] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:37:35] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/nls.metadata.json
+[2024-02-24 13:37:35] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/nls.metadata.json
+[2024-02-24 13:37:40] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:38:01] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:38:01] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:47:25] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:47:38] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:47:38] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:53:09] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 13:53:24] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 13:53:24] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 14:09:20] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 14:10:29] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 14:10:29] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 14:11:24] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 14:12:05] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 14:12:05] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 14:12:06] [ERROR] Error serving file: name 'MIME_TYPES' is not defined
+[2024-02-24 14:16:38] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 14:16:56] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 14:16:56] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 14:16:57] [ERROR] Error serving file: name 'MIME_TYPES' is not defined
+[2024-02-24 14:24:12] [INFO] Keyboard interrupt detected. Exiting...
+[2024-02-24 14:24:50] [INFO] /home/code-nit-whit/Documents/GitHub/test-editor
+[2024-02-24 14:24:50] [INFO] Server started on port 8000 serving file /home/code-nit-whit/Documents/GitHub/test-editor/index.html
+[2024-02-24 14:24:50] [INFO] text/html
+[2024-02-24 14:24:50] [INFO] application/javascript
+[2024-02-24 14:24:51] [INFO] application/javascript
+[2024-02-24 14:25:00] [INFO] text/html
+[2024-02-24 14:25:00] [INFO] application/javascript
+[2024-02-24 14:25:00] [INFO] application/javascript
+[2024-02-24 14:25:03] [INFO] text/html
+[2024-02-24 14:25:03] [INFO] application/javascript
+[2024-02-24 14:25:03] [INFO] application/javascript
+[2024-02-24 15:01:12] [INFO] Keyboard interrupt detected. Exiting...
